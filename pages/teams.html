@@ -4,68 +4,304 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teams - Gen AI Builders PH</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/components/navbar.css">
-    <link rel="stylesheet" href="../css/components/cards.css">
-    <link rel="stylesheet" href="../css/components/buttons.css">
-    <link rel="stylesheet" href="../css/components/animations.css">
-    <link rel="stylesheet" href="../css/pages/teams.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Additional inline styles to ensure visibility */
-        .teams-section {
-            padding-top: 120px;
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1A2130;
+            color: #FFFFFF;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(26, 33, 48, 0.95);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            color: #B5B5B5;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a.active,
+        .nav-links a:hover {
+            color: #3DD598;
+        }
+        
+        .register-btn {
+            background-color: #3DD598;
+            color: #1A2130 !important;
+            padding: 8px 20px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .register-btn:hover {
+            background-color: #2BB583;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+        
+        /* Teams Section */
+        .teams-section {
+            padding: 120px 0 80px;
+            min-height: 100vh;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #FFFFFF;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #B5B5B5;
+            font-size: 1.1rem;
+        }
+        
+        .teams-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .search-box {
+            display: flex;
+            align-items: center;
+            background-color: #242D3C;
+            border-radius: 50px;
+            padding: 5px 15px;
+            border: 1px solid #3A4556;
+            flex: 1;
+            max-width: 400px;
+        }
+        
+        .search-box input {
+            background: transparent;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            color: #FFFFFF;
+            font-size: 1rem;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+        }
+        
+        .search-btn {
+            background: transparent;
+            border: none;
+            color: #B5B5B5;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .filter-options select {
+            padding: 12px 20px;
+            border-radius: 50px;
+            border: 1px solid #3A4556;
+            background-color: #242D3C;
+            color: #FFFFFF;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        
+        /* Empty state styling */
         .teams-empty-state {
             background-color: #242D3C;
             border-radius: 12px;
-            padding: 40px;
+            padding: 60px 40px;
             text-align: center;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            margin: 40px 0;
+            margin: 60px 0;
         }
         
         .empty-state-icon {
-            font-size: 4rem;
+            font-size: 5rem;
             color: #3DD598;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
         }
         
         .teams-empty-state h3 {
             color: #FFFFFF;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
         
         .teams-empty-state p {
             color: #B5B5B5;
             max-width: 600px;
-            margin: 0 auto 25px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
         }
         
         .btn-primary {
             display: inline-block;
-            padding: 12px 24px;
+            padding: 15px 30px;
             background-color: #3DD598;
             color: #1A2130;
             border-radius: 50px;
             font-weight: 600;
-            text-decoration: none;
             transition: all 0.3s ease;
         }
         
         .btn-primary:hover {
             background-color: #2BB583;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(61, 213, 152, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1E2736;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            margin-bottom: 25px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links a {
+            color: #B5B5B5;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #3DD598;
+        }
+        
+        .copyright {
+            color: #B5B5B5;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: #242D3C;
+                flex-direction: column;
+                padding: 20px 0;
+                gap: 15px;
+                transform: translateY(-150%);
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+            
+            .teams-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .search-box {
+                max-width: 100%;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .teams-empty-state {
+                padding: 40px 20px;
+            }
+            
+            .empty-state-icon {
+                font-size: 4rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
+        <div class="container nav-container">
             <div class="logo">
                 <a href="../index.html">
                     <span class="logo-text">Gen AI Builders PH</span>
@@ -114,7 +350,7 @@
                 </div>
                 <h3>Teams Coming Soon</h3>
                 <p>Team registration is currently open. Check back after the application deadline to see the participating teams.</p>
-                <a href="./register.html" class="btn btn-primary">Register Your Team</a>
+                <a href="./register.html" class="btn-primary">Register Your Team</a>
             </div>
         </div>
     </section>
@@ -140,9 +376,8 @@
     </footer>
 
     <script>
-        // Inline script to ensure navigation works
+        // Simple navigation script
         document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
             const mobileMenuButton = document.querySelector('.mobile-menu');
             const navLinks = document.querySelector('.nav-links');
             
@@ -152,15 +387,14 @@
                 });
             }
             
-            // Navbar scroll effect
-            const navbar = document.querySelector('.navbar');
-            
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
+            // Close mobile menu when clicking a link
+            const navLinksItems = document.querySelectorAll('.nav-links a');
+            navLinksItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                });
             });
         });
     </script>
