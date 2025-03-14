@@ -1,13 +1,14 @@
 /* Teams Page Styles */
 .teams-section {
     padding: var(--spacing-xxl) 0;
+    margin-top: 60px;
 }
 
 .teams-controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: var(--spacing-lg) 0;
+    margin: var(--spacing-xl) 0;
     flex-wrap: wrap;
     gap: var(--spacing-md);
 }
@@ -197,33 +198,36 @@
 .teams-empty-state {
     background-color: var(--card-bg);
     border-radius: 12px;
-    padding: var(--spacing-xl);
+    padding: var(--spacing-xxl);
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin: var(--spacing-xl) 0;
+    margin: var(--spacing-xxl) 0;
 }
 
 .empty-state-icon {
-    font-size: 4rem;
+    font-size: 5rem;
     color: var(--primary-green);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
 }
 
 .teams-empty-state h3 {
     color: var(--text-primary);
-    font-size: 1.5rem;
-    margin-bottom: var(--spacing-sm);
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
 }
 
 .teams-empty-state p {
     color: var(--text-secondary);
     max-width: 600px;
-    margin: 0 auto var(--spacing-lg);
+    margin: 0 auto var(--spacing-xl);
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .teams-empty-state .btn {
     display: inline-block;
-    padding: 12px 24px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
 }
 
 /* Responsive */
@@ -238,10 +242,10 @@
     }
     
     .teams-empty-state {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-xl);
     }
     
     .empty-state-icon {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 }
