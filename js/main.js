@@ -1,3 +1,8 @@
+/**
+ * Main JavaScript file
+ * Contains global functionality and initializations
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize all components
     initializeNavigation();
@@ -13,6 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (resourceCategories) {
         initializeResourceFiltering();
     }
+
+    // Initialize animations
+    initAnimations();
+    
+    // Initialize theme toggle if present
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    // Initialize scroll to top button
+    initScrollToTop();
 });
 
 function initializeRegistrationForm() {
@@ -144,3 +161,66 @@ function initializeResourceFiltering() {
         });
     });
 }
+
+// Initialize animations for elements with the 'animate' class
+function initAnimations() {
+    const animatedElements = document.querySelectorAll('.animate');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+}
+
+// Toggle between light and dark theme
+function toggleTheme() {
+    document.body.classList.toggle('light-theme');
+    
+    // Save preference to localStorage
+    const isDarkTheme = !document.body.classList.contains('light-theme');
+    localStorage.setItem('darkTheme', isDarkTheme);
+}
+
+// Initialize scroll to top button
+function initScrollToTop() {
+    const scrollToTopBtn = document.createElement('button');
+    scrollToTopBtn.className = 'scroll-to-top';
+    scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    document.body.appendChild(scrollToTopBtn);
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    });
+    
+    // Scroll to top when clicked
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Check for saved theme preference
+function loadThemePreference() {
+    const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
+    if (!isDarkTheme) {
+        document.body.classList.add('light-theme');
+    }
+}
+
+// Load theme preference on page load
+loadThemePreference();
