@@ -1,13 +1,12 @@
 /* Base Styles */
 :root {
-    --primary-green: #3DD598;
-    --secondary-green: #2D5A4C;
-    --dark-bg: #1F2421;
-    --darker-bg: #171917;
+    --primary-color: #3DD598;
+    --secondary-color: #2D5A4C;
     --text-color: #ffffff;
-    --text-muted: #A5A5A5;
-    --card-bg: rgba(45, 90, 76, 0.2);
-    --hover-color: #4AE6A9;
+    --dark-bg: #1F2421;
+    --white: #ffffff;
+    --card-bg: #2D3436;
+    --timeline-bg: rgba(45, 90, 76, 0.3);
 }
 
 * {
@@ -31,9 +30,9 @@ body {
 
 /* Navigation */
 nav {
-    background: rgba(31, 36, 33, 0.95);
+    background-color: var(--dark-bg);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(61, 213, 152, 0.1);
+    border-bottom: 1px solid var(--secondary-color);
     position: fixed;
     width: 100%;
     top: 0;
@@ -70,7 +69,7 @@ nav {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary-green);
+    background: var(--primary-color);
     transition: width 0.3s ease;
 }
 
@@ -80,7 +79,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, rgba(61, 213, 152, 0.1), rgba(45, 90, 76, 0.2));
+    background: linear-gradient(rgba(61, 213, 152, 0.1), rgba(45, 90, 76, 0.3));
     position: relative;
     overflow: hidden;
     color: var(--text-color);
@@ -112,7 +111,7 @@ nav {
 
 .cta-button {
     display: inline-block;
-    background: var(--primary-green);
+    background: var(--primary-color);
     color: var(--dark-bg);
     padding: 1rem 2.5rem;
     border-radius: 8px;
@@ -120,12 +119,12 @@ nav {
     font-weight: bold;
     margin-top: 2rem;
     transition: all 0.3s ease;
-    border: 2px solid var(--primary-green);
+    border: 2px solid var(--primary-color);
 }
 
 .cta-button:hover {
     background: transparent;
-    color: var(--primary-green);
+    color: var(--primary-color);
     transform: translateY(-2px);
 }
 
@@ -152,13 +151,13 @@ nav {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    border: 1px solid rgba(61, 213, 152, 0.2);
+    border: 1px solid var(--secondary-color);
     transition: all 0.3s ease;
 }
 
 .track-card:hover {
     transform: translateY(-5px);
-    border-color: var(--primary-green);
+    border-color: var(--primary-color);
     box-shadow: 0 10px 20px rgba(61, 213, 152, 0.1);
 }
 
@@ -170,30 +169,29 @@ nav {
 }
 
 .timeline-item {
-    background: var(--card-bg);
-    border: 1px solid rgba(61, 213, 152, 0.2);
-    border-radius: 12px;
+    background: var(--timeline-bg);
+    border-radius: 8px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     display: grid;
     grid-template-columns: 150px 1fr;
     gap: 2rem;
-    transition: all 0.3s ease;
+    border: 1px solid var(--secondary-color);
 }
 
 .timeline-item:hover {
-    border-color: var(--primary-green);
+    border-color: var(--primary-color);
     transform: translateX(10px);
 }
 
 .timeline-item .date {
-    color: var(--primary-green);
-    font-weight: 600;
+    color: var(--primary-color);
+    font-weight: bold;
     font-size: 1.1rem;
 }
 
 .timeline-item .content h3 {
-    color: var(--primary-green);
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
 
@@ -213,13 +211,13 @@ nav {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    border: 1px solid rgba(61, 213, 152, 0.2);
+    border: 1px solid var(--secondary-color);
     transition: all 0.3s ease;
 }
 
 .stage-card:hover {
     transform: translateY(-5px);
-    border-color: var(--primary-green);
+    border-color: var(--primary-color);
     box-shadow: 0 10px 20px rgba(61, 213, 152, 0.1);
 }
 
@@ -271,7 +269,77 @@ footer {
     position: absolute;
     inset: -1px;
     border-radius: 13px;
-    background: linear-gradient(45deg, var(--primary-green), transparent);
+    background: linear-gradient(45deg, var(--primary-color), transparent);
     opacity: 0.3;
     z-index: -1;
+}
+
+/* GitHub Corner */
+.github-corner {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.github-corner svg {
+    fill: var(--primary-green);
+    color: var(--dark-bg);
+    width: 80px;
+    height: 80px;
+}
+
+.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+    0%, 100% { transform: rotate(0) }
+    20%, 60% { transform: rotate(-25deg) }
+    40%, 80% { transform: rotate(10deg) }
+}
+
+/* Social Links */
+.social-links {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.social-link {
+    color: var(--text-color);
+    background: var(--card-bg);
+    border: 1px solid rgba(61, 213, 152, 0.2);
+    padding: 10px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--primary-green);
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .github-corner svg {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .social-links {
+        flex-direction: row;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 10px;
+    }
 } 
