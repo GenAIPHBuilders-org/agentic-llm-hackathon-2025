@@ -1,26 +1,133 @@
-<!-- Navigation Bar -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gen AI Builders PH</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/components/navbar.css">
     <link rel="stylesheet" href="./css/components/cards.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="logo">
-            <a href="index.html">
-                <span class="logo-text">Gen AI Builders PH</span>
-            </a>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="./index.html">
+                    <span class="logo-text">Gen AI Builders PH</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="./index.html" class="active">Home</a>
+                <a href="./pages/teams.html">Teams</a>
+                <a href="./pages/timeline.html">Timeline</a>
+                <a href="./pages/leaderboard.html">Leaderboard</a>
+                <a href="./pages/references.html">References</a>
+                <a href="./pages/register.html" class="register-btn">Register</a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-        <div class="nav-links">
-            <a href="./index.html">Home</a>
-            <a href="./pages/teams.html">Teams</a>
-            <a href="./pages/timeline.html">Timeline</a>
-            <a href="./pages/leaderboard.html">Leaderboard</a>
-            <a href="./pages/references.html">References</a>
-            <a href="./pages/register.html" class="register-btn">Register</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to Gen AI Builders PH</h1>
+                <p class="hero-subtitle">Building the Future of AI in the Philippines</p>
+                <div class="hero-buttons">
+                    <a href="./pages/register.html" class="primary-button">Join the Community</a>
+                    <a href="#about" class="secondary-button">Learn More</a>
+                </div>
+            </div>
         </div>
-        <div class="mobile-menu">
-            <i class="fas fa-bars"></i>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>About Gen AI Builders PH</h2>
+                    <p>We are a community of AI enthusiasts, developers, and innovators working together to advance artificial intelligence in the Philippines.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>500+</h3>
+                            <p>Community Members</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>7+</h3>
+                            <p>Events & Meetups</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>10+</h3>
+                            <p>Sponsors</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</nav>
+    </section>
+
+    <!-- Events Section -->
+    <section class="section events-section">
+        <div class="container">
+            <h2>Upcoming Events</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="date">15</span>
+                        <span class="month">MAR</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>AI Hackathon 2024</h3>
+                        <p>Join us for an exciting hackathon focused on AI innovation</p>
+                        <a href="./pages/register.html" class="event-link">Register Now</a>
+                    </div>
+                </div>
+                <!-- Add more event cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="section community-section">
+        <div class="container">
+            <h2>Join Our Community</h2>
+            <div class="community-content">
+                <p>Connect with fellow AI enthusiasts, share knowledge, and build amazing projects together.</p>
+                <div class="community-links">
+                    <a href="#" class="social-link"><i class="fab fa-discord"></i> Discord</a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">Gen AI Builders PH</span>
+                </div>
+                <div class="footer-links">
+                    <a href="./pages/teams.html">Teams</a>
+                    <a href="./pages/timeline.html">Timeline</a>
+                    <a href="./pages/references.html">References</a>
+                    <a href="./pages/register.html">Register</a>
+                </div>
+                <p class="copyright">&copy; 2024 Gen AI Builders PH. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/components/navigation.js"></script>
+</body>
+</html>
