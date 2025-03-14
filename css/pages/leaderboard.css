@@ -1,21 +1,23 @@
 /* Leaderboard Page Styles */
 .leaderboard-section {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-xxl) 0;
 }
 
 .leaderboard-controls {
+    margin: var(--spacing-lg) 0;
     display: flex;
     justify-content: flex-end;
-    margin-bottom: var(--spacing-lg);
 }
 
 .track-filter {
-    background: var(--card-bg);
-    border: 1px solid rgba(61, 213, 152, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
     color: var(--text-primary);
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
+    font-size: 1rem;
     cursor: pointer;
+    transition: border-color 0.3s ease;
 }
 
 .track-filter:focus {
@@ -95,13 +97,57 @@
     color: #ffc107;
 }
 
+/* Empty state styling */
+.leaderboard-empty-state {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: var(--spacing-xl);
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: var(--spacing-xl) 0;
+}
+
+.empty-state-icon {
+    font-size: 4rem;
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-md);
+}
+
+.leaderboard-empty-state h3 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.leaderboard-empty-state p {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.leaderboard-empty-state .btn {
+    display: inline-block;
+    padding: 12px 24px;
+}
+
+.leaderboard-note {
+    margin-top: var(--spacing-lg);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .leaderboard-table {
-        font-size: 0.9rem;
+    .leaderboard-controls {
+        justify-content: center;
     }
     
-    .leaderboard-table th,
-    .leaderboard-table td {
-        padding: var(--spacing-sm);
+    .leaderboard-empty-state {
+        padding: var(--spacing-lg);
+    }
+    
+    .empty-state-icon {
+        font-size: 3rem;
     }
 } 
