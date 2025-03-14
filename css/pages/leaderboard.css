@@ -1,0 +1,107 @@
+/* Leaderboard Page Styles */
+.leaderboard-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.leaderboard-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: var(--spacing-lg);
+}
+
+.track-filter {
+    background: var(--card-bg);
+    border: 1px solid rgba(61, 213, 152, 0.1);
+    color: var(--text-primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.track-filter:focus {
+    outline: none;
+    border-color: var(--primary-green);
+}
+
+.leaderboard-table {
+    overflow-x: auto;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid rgba(61, 213, 152, 0.1);
+}
+
+.leaderboard-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.leaderboard-table th {
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.leaderboard-table tr:last-child td {
+    border-bottom: none;
+}
+
+.leaderboard-table tr:hover td {
+    background: rgba(61, 213, 152, 0.05);
+}
+
+.rank {
+    font-weight: 600;
+    width: 80px;
+}
+
+.rank-1, .rank-2, .rank-3 {
+    font-size: 1.2rem;
+}
+
+.rank-1 {
+    color: gold;
+}
+
+.rank-2 {
+    color: silver;
+}
+
+.rank-3 {
+    color: #cd7f32; /* bronze */
+}
+
+.team-status {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status-active {
+    background: rgba(61, 213, 152, 0.1);
+    color: var(--primary-green);
+}
+
+.status-pending {
+    background: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+}
+
+@media (max-width: 768px) {
+    .leaderboard-table {
+        font-size: 0.9rem;
+    }
+    
+    .leaderboard-table th,
+    .leaderboard-table td {
+        padding: var(--spacing-sm);
+    }
+} 

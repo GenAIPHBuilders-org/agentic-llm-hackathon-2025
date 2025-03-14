@@ -1,0 +1,100 @@
+/* References Page Styles */
+.references-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.resource-categories {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    background: var(--card-bg);
+    border: 1px solid rgba(61, 213, 152, 0.1);
+    color: var(--text-secondary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: var(--primary-green);
+    color: var(--dark-bg);
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.resource-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: var(--spacing-lg);
+    border: 1px solid rgba(61, 213, 152, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.resource-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(61, 213, 152, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-md);
+}
+
+.resource-icon i {
+    color: var(--primary-green);
+    font-size: 2rem;
+}
+
+.resource-card h3 {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.3rem;
+}
+
+.resource-card p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.resource-link {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary-green);
+    border-radius: 50px;
+}
+
+.resource-link:hover {
+    background: rgba(61, 213, 152, 0.1);
+}
+
+@media (max-width: 768px) {
+    .resource-categories {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .category-btn {
+        text-align: center;
+    }
+}
