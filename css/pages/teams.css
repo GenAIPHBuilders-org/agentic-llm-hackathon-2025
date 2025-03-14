@@ -1,13 +1,13 @@
 /* Teams Page Styles */
 .teams-section {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-xxl) 0;
 }
 
 .teams-controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
     flex-wrap: wrap;
     gap: var(--spacing-md);
 }
@@ -15,19 +15,21 @@
 .search-box {
     display: flex;
     align-items: center;
-    background: var(--card-bg);
+    background-color: var(--card-bg);
     border-radius: 50px;
-    padding: 0.5rem 1rem;
-    border: 1px solid rgba(61, 213, 152, 0.1);
-    width: 300px;
+    padding: 5px 15px;
+    border: 1px solid var(--border-color);
+    flex: 1;
+    max-width: 400px;
 }
 
 .search-box input {
     background: transparent;
     border: none;
-    color: var(--text-primary);
-    padding: 0.5rem;
+    padding: 10px;
     width: 100%;
+    color: var(--text-primary);
+    font-size: 1rem;
 }
 
 .search-box input:focus {
@@ -37,17 +39,24 @@
 .search-btn {
     background: transparent;
     border: none;
-    color: var(--primary-green);
+    color: var(--text-secondary);
     cursor: pointer;
+    padding: 5px;
+}
+
+.search-btn:hover {
+    color: var(--primary-green);
 }
 
 .filter-options select {
-    background: var(--card-bg);
-    border: 1px solid rgba(61, 213, 152, 0.1);
-    color: var(--text-primary);
-    padding: 0.75rem 1.5rem;
+    padding: 12px 20px;
     border-radius: 50px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    font-size: 1rem;
     cursor: pointer;
+    transition: border-color 0.3s ease;
 }
 
 .filter-options select:focus {
@@ -184,6 +193,40 @@
     color: var(--dark-bg);
 }
 
+/* Empty state styling */
+.teams-empty-state {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: var(--spacing-xl);
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: var(--spacing-xl) 0;
+}
+
+.empty-state-icon {
+    font-size: 4rem;
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-md);
+}
+
+.teams-empty-state h3 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.teams-empty-state p {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.teams-empty-state .btn {
+    display: inline-block;
+    padding: 12px 24px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .teams-controls {
         flex-direction: column;
@@ -191,6 +234,14 @@
     }
     
     .search-box {
-        width: 100%;
+        max-width: 100%;
+    }
+    
+    .teams-empty-state {
+        padding: var(--spacing-lg);
+    }
+    
+    .empty-state-icon {
+        font-size: 3rem;
     }
 }
