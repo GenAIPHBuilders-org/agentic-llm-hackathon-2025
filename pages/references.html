@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>References - Gen AI Builders PH</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components/navbar.css">
+    <link rel="stylesheet" href="../css/components/cards.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <span class="logo-text">Gen AI Builders PH</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="teams.html">Teams</a>
+                <a href="timeline.html">Timeline</a>
+                <a href="leaderboard.html">Leaderboard</a>
+                <a href="references.html" class="active">References</a>
+                <a href="register.html" class="register-btn">Register</a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <section class="references-section">
+            <div class="container">
+                <h1 class="page-title">Learning Resources</h1>
+                
+                <!-- Resource Categories -->
+                <div class="resource-categories">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="tutorials">Tutorials</button>
+                    <button class="category-btn" data-category="documentation">Documentation</button>
+                    <button class="category-btn" data-category="tools">Tools</button>
+                </div>
+
+                <!-- Resources Grid -->
+                <div class="resources-grid">
+                    <!-- Documentation -->
+                    <div class="resource-card" data-category="documentation">
+                        <div class="resource-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>API Documentation</h3>
+                        <p>Complete API reference and documentation for the hackathon.</p>
+                        <a href="#" class="resource-link">Learn More</a>
+                    </div>
+
+                    <!-- Tutorials -->
+                    <div class="resource-card" data-category="tutorials">
+                        <div class="resource-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Video Tutorials</h3>
+                        <p>Step-by-step video guides for AI development.</p>
+                        <a href="#" class="resource-link">Watch Now</a>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="resource-card" data-category="tools">
+                        <div class="resource-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Development Tools</h3>
+                        <p>Essential tools and frameworks for your project.</p>
+                        <a href="#" class="resource-link">View Tools</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Gen AI Builders PH. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/components/navigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - Gen AI Builders PH</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components/navbar.css">
+    <link rel="stylesheet" href="../css/components/cards.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <span class="logo-text">Gen AI Builders PH</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="teams.html">Teams</a>
+                <a href="timeline.html">Timeline</a>
+                <a href="leaderboard.html" class="active">Leaderboard</a>
+                <a href="references.html">References</a>
+                <a href="register.html" class="register-btn">Register</a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <section class="leaderboard-section">
+            <div class="container">
+                <h1 class="page-title">Leaderboard</h1>
+                
+                <div class="leaderboard-controls">
+                    <select id="trackSelect" class="track-filter">
+                        <option value="all">All Tracks</option>
+                        <option value="track1">Track 1</option>
+                        <option value="track2">Track 2</option>
+                    </select>
+                </div>
+
+                <div class="leaderboard-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Team</th>
+                                <th>Track</th>
+                                <th>Score</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboardBody">
+                            <!-- Leaderboard entries will be dynamically populated -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Gen AI Builders PH. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/components/navigation.js"></script>
+</body>
+</html>

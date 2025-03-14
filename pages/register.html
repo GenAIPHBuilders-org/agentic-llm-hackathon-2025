@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Gen AI Builders PH</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components/navbar.css">
+    <link rel="stylesheet" href="../css/components/forms.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <span class="logo-text">Gen AI Builders PH</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="teams.html">Teams</a>
+                <a href="timeline.html">Timeline</a>
+                <a href="leaderboard.html">Leaderboard</a>
+                <a href="references.html">References</a>
+                <a href="register.html" class="active register-btn">Register</a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <section class="register-section">
+            <div class="container">
+                <h1 class="page-title">Team Registration</h1>
+                
+                <form id="registrationForm" class="registration-form">
+                    <!-- Team Information -->
+                    <div class="form-section">
+                        <h2>Team Information</h2>
+                        <div class="form-group">
+                            <label for="teamName">Team Name *</label>
+                            <input type="text" id="teamName" name="teamName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="teamEmail">Team Email *</label>
+                            <input type="email" id="teamEmail" name="teamEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="track">Select Track *</label>
+                            <select id="track" name="track" required>
+                                <option value="">Choose a track...</option>
+                                <option value="track1">Track 1: AI Innovation</option>
+                                <option value="track2">Track 2: AI Applications</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Team Members -->
+                    <div class="form-section">
+                        <h2>Team Members</h2>
+                        <div id="teamMembers">
+                            <!-- Member 1 -->
+                            <div class="team-member">
+                                <h3>Team Leader</h3>
+                                <div class="form-group">
+                                    <label>Full Name *</label>
+                                    <input type="text" name="member1Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email *</label>
+                                    <input type="email" name="member1Email" required>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" id="addMember" class="secondary-button">
+                            <i class="fas fa-plus"></i> Add Team Member
+                        </button>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="primary-button">Submit Registration</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Gen AI Builders PH. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/components/navigation.js"></script>
+</body>
+</html>
+

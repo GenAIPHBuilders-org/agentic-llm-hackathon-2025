@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams - Gen AI Builders PH</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components/navbar.css">
+    <link rel="stylesheet" href="../css/components/cards.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">Gen AI Builders PH</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="pages/teams.html" class="active">Teams</a>
+                <a href="pages/timeline.html">Timeline</a>
+                <a href="pages/leaderboard.html">Leaderboard</a>
+                <a href="pages/references.html">References</a>
+                <a href="pages/register.html" class="register-btn">Register</a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <section class="teams-section">
+            <div class="container">
+                <h1 class="page-title">Teams</h1>
+                
+                <!-- Search and Filter -->
+                <div class="teams-controls">
+                    <div class="search-box">
+                        <input type="text" id="teamSearch" placeholder="Search teams...">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filter-options">
+                        <select id="trackFilter">
+                            <option value="">All Tracks</option>
+                            <option value="track1">Track 1</option>
+                            <option value="track2">Track 2</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Teams Grid -->
+                <div class="teams-grid">
+                    <!-- Team cards will be dynamically populated -->
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="prev-page"><i class="fas fa-chevron-left"></i></button>
+                    <div class="page-numbers"></div>
+                    <button class="next-page"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Gen AI Builders PH. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/components/navigation.js"></script>
+</body>
+</html>

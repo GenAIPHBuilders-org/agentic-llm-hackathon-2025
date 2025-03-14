@@ -1,0 +1,12 @@
+{
+  "name": "agentic-llm-hackathon-2025",
+  "version": "1.0.0",
+  "description": "[![LinkedIn](https://img.shields.io/badge/LinkedIn-Gen_AI_Philippines-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/company/gen-ai-philippines/?viewAsMember=true) [![GitHub](https://img.shields.io/badge/GitHub-GenAIPHBuilders-green?style=flat-square&logo=github)](https://github.com/GenAIPHBuilders-org)",
+  "main": "register.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
