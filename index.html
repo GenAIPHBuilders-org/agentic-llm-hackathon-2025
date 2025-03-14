@@ -6,6 +6,32 @@
     <title>Agentic AI Hackathon - Gen AI Philippines</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Add fade-in animation to sections
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Mark important timeline items
+        const importantDates = ['March 5, 2025', 'April 14, 2025', 'June 14, 2025'];
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            const date = item.querySelector('.date').textContent;
+            if (importantDates.includes(date)) {
+                item.classList.add('important');
+            }
+        });
+    });
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -27,8 +53,11 @@
     <header class="hero">
         <div class="hero-content">
             <h1>Agentic AI Hackathon</h1>
-            <p>Fostering groundbreaking solutions powered by AI</p>
-            <a href="#" class="cta-button">Register Now</a>
+            <p class="hero-subtitle">Fostering groundbreaking solutions powered by AI</p>
+            <div class="cta-buttons">
+                <a href="#" class="cta-button">Register Now</a>
+                <a href="#about" class="cta-button secondary">Learn More</a>
+            </div>
         </div>
     </header>
 
