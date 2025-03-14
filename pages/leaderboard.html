@@ -6,11 +6,10 @@
     <title>Leaderboard - Gen AI Builders PH</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/components/navbar.css">
-    <link rel="stylesheet" href="../css/components/cards.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/pages/leaderboard.css">
     <link rel="stylesheet" href="../css/components/buttons.css">
     <link rel="stylesheet" href="../css/components/animations.css">
+    <link rel="stylesheet" href="../css/pages/leaderboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -35,48 +34,155 @@
         </div>
     </nav>
 
-    <main class="page-content">
-        <section class="leaderboard-section">
-            <div class="container">
-                <h1 class="page-title">Leaderboard</h1>
-                
-                <div class="leaderboard-controls">
-                    <select id="trackSelect" class="track-filter">
-                        <option value="all">All Tracks</option>
-                        <option value="track1">Track 1</option>
-                        <option value="track2">Track 2</option>
-                    </select>
-                </div>
-
-                <div class="leaderboard-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Rank</th>
-                                <th>Team</th>
-                                <th>Track</th>
-                                <th>Score</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody id="leaderboardBody">
-                            <!-- Leaderboard entries will be dynamically populated -->
-                        </tbody>
-                    </table>
-                </div>
+    <!-- Leaderboard Section -->
+    <section class="leaderboard-section">
+        <div class="container">
+            <h2 class="section-title">Program Leaderboard</h2>
+            <p class="section-subtitle">Current standings of teams based on milestone evaluations</p>
+            
+            <div class="leaderboard-controls">
+                <select id="trackFilter" class="track-filter">
+                    <option value="all">All Tracks</option>
+                    <option value="nlp">Natural Language Processing</option>
+                    <option value="cv">Computer Vision</option>
+                    <option value="ml">Machine Learning</option>
+                    <option value="rl">Reinforcement Learning</option>
+                </select>
             </div>
-        </section>
-    </main>
+            
+            <div class="leaderboard-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th data-sort="rank">Rank</th>
+                            <th data-sort="team">Team</th>
+                            <th data-sort="track">Track</th>
+                            <th data-sort="score">Score</th>
+                            <th data-sort="status">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Team 1 -->
+                        <tr>
+                            <td class="rank rank-1" data-rank="1">1</td>
+                            <td data-team="ML Wizards">ML Wizards</td>
+                            <td data-track="ml">Machine Learning</td>
+                            <td data-score="95">95</td>
+                            <td><span class="team-status status-active">Active</span></td>
+                        </tr>
+                        
+                        <!-- Team 2 -->
+                        <tr>
+                            <td class="rank rank-2" data-rank="2">2</td>
+                            <td data-team="NLP Pioneers">NLP Pioneers</td>
+                            <td data-track="nlp">Natural Language Processing</td>
+                            <td data-score="92">92</td>
+                            <td><span class="team-status status-active">Active</span></td>
+                        </tr>
+                        
+                        <!-- Team 3 -->
+                        <tr>
+                            <td class="rank rank-3" data-rank="3">3</td>
+                            <td data-team="Vision Masters">Vision Masters</td>
+                            <td data-track="cv">Computer Vision</td>
+                            <td data-score="88">88</td>
+                            <td><span class="team-status status-active">Active</span></td>
+                        </tr>
+                        
+                        <!-- Team 4 -->
+                        <tr>
+                            <td class="rank" data-rank="4">4</td>
+                            <td data-team="RL Explorers">RL Explorers</td>
+                            <td data-track="rl">Reinforcement Learning</td>
+                            <td data-score="85">85</td>
+                            <td><span class="team-status status-active">Active</span></td>
+                        </tr>
+                        
+                        <!-- Team 5 -->
+                        <tr>
+                            <td class="rank" data-rank="5">5</td>
+                            <td data-team="AI Innovators">AI Innovators</td>
+                            <td data-track="nlp">Natural Language Processing</td>
+                            <td data-score="82">82</td>
+                            <td><span class="team-status status-active">Active</span></td>
+                        </tr>
+                        
+                        <!-- Team 6 -->
+                        <tr>
+                            <td class="rank" data-rank="6">6</td>
+                            <td data-team="CV Experts">CV Experts</td>
+                            <td data-track="cv">Computer Vision</td>
+                            <td data-score="78">78</td>
+                            <td><span class="team-status status-active">Active</span></td>
+                        </tr>
+                        
+                        <!-- Team 7 -->
+                        <tr>
+                            <td class="rank" data-rank="7">7</td>
+                            <td data-team="Data Wizards">Data Wizards</td>
+                            <td data-track="ml">Machine Learning</td>
+                            <td data-score="75">75</td>
+                            <td><span class="team-status status-active">Active</span></td>
+                        </tr>
+                        
+                        <!-- Team 8 -->
+                        <tr>
+                            <td class="rank" data-rank="8">8</td>
+                            <td data-team="AI Builders">AI Builders</td>
+                            <td data-track="nlp">Natural Language Processing</td>
+                            <td data-score="72">72</td>
+                            <td><span class="team-status status-active">Active</span></td>
+                        </tr>
+                        
+                        <!-- Team 9 -->
+                        <tr>
+                            <td class="rank" data-rank="9">9</td>
+                            <td data-team="RL Masters">RL Masters</td>
+                            <td data-track="rl">Reinforcement Learning</td>
+                            <td data-score="68">68</td>
+                            <td><span class="team-status status-pending">Pending</span></td>
+                        </tr>
+                        
+                        <!-- Team 10 -->
+                        <tr>
+                            <td class="rank" data-rank="10">10</td>
+                            <td data-team="Vision AI">Vision AI</td>
+                            <td data-track="cv">Computer Vision</td>
+                            <td data-score="65">65</td>
+                            <td><span class="team-status status-pending">Pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="leaderboard-note">
+                <p><strong>Note:</strong> Leaderboard is updated after each milestone evaluation. Last updated: May 15, 2024.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Gen AI Builders PH. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">Gen AI Builders PH</span>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html">Home</a>
+                    <a href="./teams.html">Teams</a>
+                    <a href="./timeline.html">Timeline</a>
+                    <a href="./leaderboard.html">Leaderboard</a>
+                    <a href="./references.html">References</a>
+                    <a href="./register.html">Register</a>
+                </div>
+                <p class="copyright">&copy; 2024 Gen AI Builders PH. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
-    <script src="../js/components/navigation.js"></script>
     <script src="../js/components/modal.js"></script>
+    <script src="../js/components/navigation.js"></script>
     <script src="../js/pages/leaderboard.js"></script>
 </body>
 </html>
