@@ -1,6 +1,6 @@
 /* Timeline Page Styles */
 .timeline-section {
-    padding: var(--spacing-xxl) 0;
+    padding: 120px 0 80px;
 }
 
 .timeline {
@@ -106,7 +106,180 @@
     transform: translateY(0);
 }
 
-/* Responsive timeline */
+/* Timeline table styles */
+.timeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 40px 0;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.timeline-table th, 
+.timeline-table td {
+    padding: 18px 24px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.timeline-table th {
+    background-color: var(--primary-green);
+    color: var(--dark-bg);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline-table tr {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.timeline-table tr:hover {
+    background-color: rgba(61, 213, 152, 0.1);
+    transform: translateX(5px);
+}
+
+.timeline-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Timeline event status styles */
+.past-event {
+    opacity: 0.7;
+}
+
+.current-event {
+    background-color: rgba(61, 213, 152, 0.15);
+    font-weight: 600;
+}
+
+.current-event td:first-child {
+    border-left: 4px solid var(--primary-green);
+}
+
+.future-event {
+    opacity: 0.9;
+}
+
+/* Animation for timeline rows */
+.timeline-table tbody tr {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.timeline-table tbody tr.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Event details panel */
+.event-details {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 0;
+    margin: 30px 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.event-details.active {
+    padding: 24px;
+    max-height: 500px;
+    opacity: 1;
+}
+
+.details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.details-header h3 {
+    color: var(--primary-green);
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--primary-green);
+}
+
+.details-date {
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.additional-info {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.event-highlight {
+    background-color: rgba(61, 213, 152, 0.1);
+    border-left: 3px solid var(--primary-green);
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 0 8px 8px 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: var(--dark-bg);
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-green-dark);
+}
+
+.timeline-emoji {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 30px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
     .timeline::before {
         left: 40px;
@@ -135,5 +308,18 @@
     .timeline-item:nth-child(odd)::after {
         right: auto;
         left: 30px;
+    }
+    
+    .timeline-table th, 
+    .timeline-table td {
+        padding: 12px 15px;
+    }
+    
+    .timeline-emoji {
+        font-size: 2.5rem;
+    }
+    
+    .details-header h3 {
+        font-size: 1.2rem;
     }
 }
