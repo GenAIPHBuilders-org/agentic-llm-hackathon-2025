@@ -7,6 +7,8 @@
     --dark-text: #1f2937;
     --light-text: #ffffff;
     --card-bg: rgba(45, 90, 76, 0.2);
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
 }
 
 /* Base Styles */
@@ -83,11 +85,28 @@ body {
     align-items: center;
 }
 
+.logo {
+    padding: var(--spacing-sm) 0;
+}
+
 .logo a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.logo-text {
     color: var(--primary-green);
     font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Optional: Add hover effect */
+.logo a:hover .logo-text {
+    color: #fff;
+    transition: color 0.3s ease;
 }
 
 .nav-links {
@@ -119,12 +138,14 @@ body {
     border-radius: 50px;
     font-weight: 500;
     transition: all 0.3s ease;
+    margin-left: var(--spacing-md);
 }
 
 .register-btn:hover {
     background: #fff;
     color: var(--primary-green) !important;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(61, 213, 152, 0.2);
 }
 
 .mobile-menu {
@@ -157,8 +178,9 @@ body {
     }
 
     .register-btn {
-        width: 100%;
+        margin-left: 0;
         text-align: center;
+        display: block;
     }
 }
 
