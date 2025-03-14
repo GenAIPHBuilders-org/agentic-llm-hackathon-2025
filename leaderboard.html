@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - Agentic AI Hackathon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Include the same navigation -->
+    <nav>...</nav>
+
+    <main class="page-content">
+        <section class="leaderboard-section">
+            <div class="container">
+                <h1 class="page-title">Live Leaderboard</h1>
+                
+                <!-- Track Selection -->
+                <div class="track-selector">
+                    <button class="track-btn active" data-track="overall">Overall</button>
+                    <button class="track-btn" data-track="innovation">Innovation Track</button>
+                    <button class="track-btn" data-track="security">Security Track</button>
+                </div>
+
+                <!-- Leaderboard Table -->
+                <div class="leaderboard-container">
+                    <table class="leaderboard-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Team</th>
+                                <th>Track</th>
+                                <th>Score</th>
+                                <th>Progress</th>
+                                <th>Last Update</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboardBody">
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Include footer -->
+    <footer>...</footer>
+    <script src="leaderboard.js"></script>
+</body>
+</html> 

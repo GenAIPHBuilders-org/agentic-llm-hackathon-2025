@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participating Teams - Agentic AI Hackathon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Agentic AI Hackathon">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="teams.html" class="active">Teams</a>
+                <a href="leaderboard.html">Leaderboard</a>
+                <a href="resources.html">Resources</a>
+                <a href="register.html" class="cta-button">Register</a>
+            </div>
+            <button class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <section class="teams-section">
+            <div class="container">
+                <h1 class="page-title">Participating Teams</h1>
+                
+                <!-- Teams Dashboard Stats -->
+                <div class="teams-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Total Teams</h3>
+                        <span id="totalTeams">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-robot"></i>
+                        <h3>Innovation Track</h3>
+                        <span id="innovationTeams">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Security Track</h3>
+                        <span id="securityTeams">0</span>
+                    </div>
+                </div>
+
+                <!-- Search and Filters -->
+                <div class="teams-controls">
+                    <div class="search-box">
+                        <input type="text" id="teamSearch" placeholder="Search by team name or project...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="filter-controls">
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-track="all">All Teams</button>
+                            <button class="filter-btn" data-track="innovation-single">Single Agent</button>
+                            <button class="filter-btn" data-track="innovation-multi">Multi Agent</button>
+                            <button class="filter-btn" data-track="security">Security</button>
+                        </div>
+                        <select id="sortTeams" class="sort-select">
+                            <option value="name">Sort by Name</option>
+                            <option value="progress">Sort by Progress</option>
+                            <option value="recent">Recently Added</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Teams Grid -->
+                <div class="teams-grid" id="teamsGrid">
+                    <!-- Team Card Template -->
+                    <template id="teamCardTemplate">
+                        <div class="team-card">
+                            <div class="team-header">
+                                <h3 class="team-name"></h3>
+                                <span class="track-badge"></span>
+                            </div>
+                            <div class="team-content">
+                                <div class="project-info">
+                                    <h4>Project</h4>
+                                    <p class="project-description"></p>
+                                </div>
+                                <div class="team-members">
+                                    <h4>Team Members</h4>
+                                    <ul class="members-list"></ul>
+                                </div>
+                                <div class="project-progress">
+                                    <h4>Progress</h4>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill"></div>
+                                        <span class="progress-text"></span>
+                                    </div>
+                                </div>
+                                <div class="team-links">
+                                    <a href="#" class="github-link" target="_blank">
+                                        <i class="fab fa-github"></i> View Project
+                                    </a>
+                                    <button class="view-details-btn">
+                                        <i class="fas fa-info-circle"></i> Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Team Details Modal -->
+                <div id="teamModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <div class="team-details">
+                            <h2 class="modal-team-name"></h2>
+                            <div class="modal-track"></div>
+                            <div class="modal-sections">
+                                <div class="modal-section">
+                                    <h3>Project Details</h3>
+                                    <p class="modal-project-description"></p>
+                                    <h4>Tech Stack</h4>
+                                    <div class="tech-stack-tags"></div>
+                                </div>
+                                <div class="modal-section">
+                                    <h3>Team Members</h3>
+                                    <div class="modal-team-members"></div>
+                                </div>
+                                <div class="modal-section">
+                                    <h3>Progress Updates</h3>
+                                    <div class="progress-timeline"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button id="prevPage" class="page-btn" disabled>
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <div id="pageNumbers" class="page-numbers"></div>
+                    <button id="nextPage" class="page-btn">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer content -->
+    </footer>
+
+    <script src="teams.js"></script>
+</body>
+</html> 

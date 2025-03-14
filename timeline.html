@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Timeline - Agentic AI Hackathon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>...</nav>
+
+    <main class="page-content">
+        <section class="timeline-section">
+            <div class="container">
+                <h1 class="page-title">Hackathon Timeline</h1>
+                
+                <!-- Timeline Progress -->
+                <div class="timeline-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="timelineProgress"></div>
+                    </div>
+                    <div class="time-remaining" id="timeRemaining">
+                        <!-- Updated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Current Phase -->
+                <div class="current-phase" id="currentPhase">
+                    <h2>Current Phase</h2>
+                    <div class="phase-card">
+                        <div class="phase-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="phase-info">
+                            <h3>Registration Phase</h3>
+                            <p>March 20 - March 30, 2024</p>
+                        </div>
+                        <div class="phase-status">
+                            <span class="status-badge active">Active</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Events -->
+                <div class="timeline-events">
+                    <!-- Registration Phase -->
+                    <div class="timeline-phase completed">
+                        <div class="phase-marker">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <div class="phase-content">
+                            <h3>Registration Opens</h3>
+                            <time>March 20, 2024</time>
+                            <p>Begin team registration and project ideation</p>
+                            <div class="phase-tasks">
+                                <div class="task completed">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Form your team (2-4 members)</span>
+                                </div>
+                                <div class="task completed">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Submit initial project proposal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Workshops Phase -->
+                    <div class="timeline-phase active">
+                        <div class="phase-marker">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="phase-content">
+                            <h3>Workshop Sessions</h3>
+                            <div class="workshop-schedule">
+                                <div class="workshop">
+                                    <time>April 20, 2024</time>
+                                    <h4>Session 1: Agents Workshop</h4>
+                                    <p>Introduction to AI Agents and Core Concepts</p>
+                                    <a href="#" class="workshop-link">Join Session</a>
+                                </div>
+                                <div class="workshop">
+                                    <time>April 30, 2024</time>
+                                    <h4>Session 2: Fine-tuning Workshop</h4>
+                                    <p>Advanced Agent Training and Optimization</p>
+                                    <a href="#" class="workshop-link">Coming Soon</a>
+                                </div>
+                                <div class="workshop">
+                                    <time>May 10, 2024</time>
+                                    <h4>Session 3: Multi-agentic Workshop</h4>
+                                    <p>Building Complex Agent Systems</p>
+                                    <a href="#" class="workshop-link">Coming Soon</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Development Phase -->
+                    <div class="timeline-phase">
+                        <div class="phase-marker">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="phase-content">
+                            <h3>Development Sprint</h3>
+                            <time>May 11 - June 20, 2024</time>
+                            <div class="milestone-list">
+                                <div class="milestone">
+                                    <time>May 20, 2024</time>
+                                    <span>Pitch Deck Submission</span>
+                                </div>
+                                <div class="milestone">
+                                    <time>May 30, 2024</time>
+                                    <span>Stage II Selection</span>
+                                </div>
+                                <div class="milestone">
+                                    <time>June 10, 2024</time>
+                                    <span>Resource Access Deadline</span>
+                                </div>
+                                <div class="milestone">
+                                    <time>June 20, 2024</time>
+                                    <span>Demo Submission</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Finals Phase -->
+                    <div class="timeline-phase">
+                        <div class="phase-marker">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="phase-content">
+                            <h3>Demo Day & Finals</h3>
+                            <time>June 30, 2024</time>
+                            <div class="finals-schedule">
+                                <div class="schedule-item">
+                                    <time>09:00 AM</time>
+                                    <span>Opening Ceremony</span>
+                                </div>
+                                <div class="schedule-item">
+                                    <time>10:00 AM</time>
+                                    <span>Project Demonstrations</span>
+                                </div>
+                                <div class="schedule-item">
+                                    <time>02:00 PM</time>
+                                    <span>Judging Session</span>
+                                </div>
+                                <div class="schedule-item">
+                                    <time>04:00 PM</time>
+                                    <span>Awards Ceremony</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Important Dates Summary -->
+                <div class="dates-summary">
+                    <h3>Key Dates at a Glance</h3>
+                    <div class="dates-grid">
+                        <!-- Dates will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>...</footer>
+    <script src="timeline.js"></script>
+</body>
+</html> 

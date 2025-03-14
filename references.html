@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Resources - Agentic AI Hackathon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Agentic AI Hackathon">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="teams.html">Teams</a>
+                <a href="timeline.html">Timeline</a>
+                <a href="leaderboard.html">Leaderboard</a>
+                <a href="references.html" class="active">Resources</a>
+                <a href="register.html" class="cta-button">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <section class="resources-section">
+            <div class="container">
+                <h1 class="page-title">Learning Resources</h1>
+
+                <!-- Resource Categories -->
+                <div class="resource-categories">
+                    <button class="category-btn active" data-category="all">All Resources</button>
+                    <button class="category-btn" data-category="tutorials">Tutorials</button>
+                    <button class="category-btn" data-category="documentation">Documentation</button>
+                    <button class="category-btn" data-category="tools">Tools & APIs</button>
+                    <button class="category-btn" data-category="papers">Research Papers</button>
+                </div>
+
+                <!-- Resources Grid -->
+                <div class="resources-grid">
+                    <!-- Tutorials Section -->
+                    <div class="resource-section" id="tutorials">
+                        <h2><i class="fas fa-graduation-cap"></i> Getting Started</h2>
+                        <div class="resource-cards">
+                            <div class="resource-card">
+                                <div class="resource-type">Tutorial</div>
+                                <h3>Introduction to AI Agents</h3>
+                                <p>Learn the fundamentals of AI agents and their applications.</p>
+                                <div class="resource-meta">
+                                    <span><i class="fas fa-clock"></i> 45 mins</span>
+                                    <span><i class="fas fa-signal"></i> Beginner</span>
+                                </div>
+                                <a href="#" class="resource-link" target="_blank">Start Learning</a>
+                            </div>
+                            <!-- Add more tutorial cards -->
+                        </div>
+                    </div>
+
+                    <!-- Documentation Section -->
+                    <div class="resource-section" id="documentation">
+                        <h2><i class="fas fa-book"></i> Documentation & Guides</h2>
+                        <div class="resource-cards">
+                            <div class="resource-card">
+                                <div class="resource-type">Documentation</div>
+                                <h3>LangChain Framework</h3>
+                                <p>Official documentation for building language model applications.</p>
+                                <div class="tech-tags">
+                                    <span>Python</span>
+                                    <span>LLM</span>
+                                    <span>Agents</span>
+                                </div>
+                                <a href="https://python.langchain.com/docs/get_started/introduction.html" class="resource-link" target="_blank">View Docs</a>
+                            </div>
+                            <!-- Add more documentation cards -->
+                        </div>
+                    </div>
+
+                    <!-- Tools Section -->
+                    <div class="resource-section" id="tools">
+                        <h2><i class="fas fa-tools"></i> Development Tools</h2>
+                        <div class="resource-cards">
+                            <div class="resource-card">
+                                <div class="resource-type">Tool</div>
+                                <h3>OpenAI API</h3>
+                                <p>Access state-of-the-art language models for your applications.</p>
+                                <div class="tech-tags">
+                                    <span>API</span>
+                                    <span>GPT</span>
+                                    <span>AI</span>
+                                </div>
+                                <a href="https://platform.openai.com/docs/introduction" class="resource-link" target="_blank">Explore API</a>
+                            </div>
+                            <!-- Add more tool cards -->
+                        </div>
+                    </div>
+
+                    <!-- Research Papers Section -->
+                    <div class="resource-section" id="papers">
+                        <h2><i class="fas fa-microscope"></i> Research Papers</h2>
+                        <div class="resource-cards">
+                            <div class="resource-card">
+                                <div class="resource-type">Paper</div>
+                                <h3>Constitutional AI</h3>
+                                <p>Research on developing safe and ethical AI systems.</p>
+                                <div class="paper-meta">
+                                    <span><i class="fas fa-calendar"></i> 2023</span>
+                                    <span><i class="fas fa-university"></i> Anthropic</span>
+                                </div>
+                                <a href="#" class="resource-link" target="_blank">Read Paper</a>
+                            </div>
+                            <!-- Add more paper cards -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Search -->
+                <div class="resource-search">
+                    <input type="text" id="resourceSearch" placeholder="Search resources...">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>...</footer>
+    <script src="references.js"></script>
+</body>
+</html> 
