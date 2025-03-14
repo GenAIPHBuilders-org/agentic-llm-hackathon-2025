@@ -5,70 +5,72 @@
 
 function initializeNavigation() {
     // Mobile menu toggle
-    const mobileMenuBtn = document.querySelector('.mobile-menu');
+    const mobileMenuButton = document.querySelector('.mobile-menu');
     const navLinks = document.querySelector('.nav-links');
-
-    if (mobileMenuBtn && navLinks) {
-        mobileMenuBtn.addEventListener('click', () => {
+    
+    if (mobileMenuButton) {
+        mobileMenuButton.addEventListener('click', function() {
             navLinks.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (navLinks.classList.contains('active') && 
-                !e.target.closest('.nav-links') && 
-                !e.target.closest('.mobile-menu')) {
-                navLinks.classList.remove('active');
-                document.body.classList.remove('menu-open');
-            }
         });
     }
-
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.mobile-menu') && !event.target.closest('.nav-links')) {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        }
+    });
+    
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+    
     // Smooth scrolling for anchor links
-    const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
-    anchorLinks.forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Close mobile menu if open
-            if (navLinks && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                document.body.classList.remove('menu-open');
-            }
-            
             const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+            if (targetId === '#') return;
             
+            const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                // Get the navbar height for offset
-                const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+                // Close mobile menu if open
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
                 
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = targetPosition - navbarHeight;
-
+                // Scroll to target
                 window.scrollTo({
-                    top: offsetPosition,
+                    top: targetElement.offsetTop - 80, // Adjust for navbar height
                     behavior: 'smooth'
                 });
             }
         });
     });
-
-    // Handle active state for navigation links
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navbarLinks = document.querySelectorAll('.nav-links a');
     
-    navbarLinks.forEach(link => {
-        const linkHref = link.getAttribute('href');
+    // Add active class to current page link
+    const currentPage = window.location.pathname;
+    const navLinksItems = document.querySelectorAll('.nav-links a');
+    
+    navLinksItems.forEach(link => {
+        const linkPath = link.getAttribute('href');
         
-        // Check if the link points to the current page
-        if (linkHref.includes(currentPage) || 
-            (currentPage === 'index.html' && linkHref === './') ||
-            (currentPage === 'index.html' && linkHref === './index.html')) {
+        // Check if the current page matches the link
+        if (currentPage.includes(linkPath) && linkPath !== '../index.html' && linkPath !== './index.html') {
             link.classList.add('active');
-        } else {
-            link.classList.remove('active');
+        } else if ((currentPage === '/' || currentPage.includes('index.html')) && 
+                  (linkPath === '../index.html' || linkPath === './index.html' || linkPath === '/')) {
+            link.classList.add('active');
         }
     });
 
